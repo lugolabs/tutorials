@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Covers</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .cf:before, .cf:after { content:""; display:table; }
+    .cf:after { clear:both; }
+    .cf { zoom:1; }
+
+    .container {
+      max-width: 60em;
+      margin: 3em auto;
+    }
+
+    .content {
+      float: left;
+      width: 25%;
+    }
+
+    .content h2 {
+      font-size: 1em;
+      font-weight: normal;
+      text-transform: uppercase;
+      margin-bottom: 1em;
+    }
+
+    .content ol {
+      margin-right: 1em;
+      padding-left: 1em;
+    }
+
+    .content li {
+      padding-bottom: .5em;
+    }
+
+    .discs {
+      float: left;
+      width: 75%;
+    }
+
+    .discs li {
+      width: 150px;
+      height: 150px;
+      display: block;
+      cursor: move;
+      float: left;
+      margin: 0 2px 2px 0;
+    }
+
+    .discs img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container cf">
+    <div class="content">
+      <h2>Covers</h2>
+      <ol id="titles"></ol>
+    </div>
+    <ul class="discs cf" id="discs"></ul>
+  </div>
+
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+  <script>
+  $(function() {
+    var Covers = function(data) {
+      this._data = data;
+      this._init();
+    };
+
+    Covers.prototype = {
+      _init: function() {
+        var self = this;
+        this._covers = $('#discs');
+        this._titles = $('#titles');
+
+        this._createCovers();
+        this._createTitles(this._data);
+
+        this._covers.sortable({
+          revert: true,
+          stop: function() { self._sort(); }
+        });
+      },
+
+      _sort: function() {
+        var ids = this._covers.sortable('toArray'),
+          data = [];
+        for (var i = 0; i < ids.length; i++) {
+          var id = parseInt(ids[i].replace('disc-', ''));
+          data.push(this._data[id]);
+        }
+        this._createTitles(data);
+      },
+
+      _createCovers: function() {
+        var covers  = [];
+        for (var i = 0; i < this._data.length; i++) {
+          var disc = this._data[i];
+          covers.push(this._createCover(disc, i));
+        }
+        this._covers.html(covers.join(''));
+      },
+
+      _createCover: function(disc, i) {
+        return '<li id="disc-' + i + '"><img src="' + disc.img + '" alt="' + disc.title + '"/></li>';
+      },
+
+      _createTitles: function(data) {
+        var titles = [];
+        for (var i = 0; i < data.length; i++) {
+          titles.push(this._createTitle(data[i]));
+        }
+        this._titles.html(titles.join(''));
+      },
+
+      _createTitle: function(disc) {
+        return '<li>' + disc.title + ' - ' + disc.author + '</li>';
+      }
+    };
+
+    new Covers([
+      { title: "Title", author: "Meghan Trainor", img: "http://ecx.images-amazon.com/images/I/61gLDt2PU%2BL.jpg" },
+      { title: "Shadows In The Night", author: "Bob Dylan", img: "http://ecx.images-amazon.com/images/I/51FdrYnOC2L.jpg" },
+      { title: "The Firewatcher's Daughter", author: "Brandi Carlile", img: "http://ecx.images-amazon.com/images/I/612sEmlEjjL.jpg" },
+      { title: "What a Terrible World, What a Beautiful World", author: "The Decemberists", img: "http://ecx.images-amazon.com/images/I/61yMEEq8YXL.jpg" },
+      { title: "Rebel Heart", author: "Madonna", img: "http://ecx.images-amazon.com/images/I/518-GYTUTRL.jpg" },
+      { title: "Wallflower", author: "Diana Krall", img: "http://ecx.images-amazon.com/images/I/51hH8ze6UpL.jpg" },
+      { title: "Smoke and Mirrors", author: "Imagine Dragons", img: "http://ecx.images-amazon.com/images/I/514No6jBDuL.jpg" },
+      { title: "Reflection", author: "Fifth Harmony", img: "http://ecx.images-amazon.com/images/I/51pETxGnE6L.jpg" }
+    ]);
+  });
+  </script>
+
+</body>
+</html>
