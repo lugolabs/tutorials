@@ -1,0 +1,114 @@
+body {
+  font-family: sans-serif;
+  background: #2F4347;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  margin: 3em auto;
+  width: 20em;
+}
+
+.result {
+  width: 5em;
+  height: 5em;
+  border-radius: 30%;
+  box-shadow: 0 2px 6px #000;
+  background: #95C066;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 2em;
+}
+
+.output {
+  margin-bottom: 5em;
+  padding: 1em;
+  color: #fff;
+  border-bottom: 2px dashed #42595E;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .8em;
+  text-shadow: 0 -1px 0 #2B3E42;
+  color: #475D62;
+}
+
+/* spectrum */
+.sp-container {
+  border: none;
+  box-shadow: 0 0 .8em #aaa;
+}
+
+.sp-replacer {
+  background: transparent;
+  padding-right: 14px;
+  border-color: #475D62;
+}
+
+.sp-replacer:hover,
+.sp-replacer.sp-active {
+  border-color: #536E74;
+}
+
+.sp-preview {
+  position: relative;
+  border: none;
+}
+
+.sp-preview:before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 30px;
+  border-top: 5px solid #5D7980;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.sp-replacer:hover .sp-preview:before,
+.sp-replacer.sp-active .sp-preview:before {
+  border-top-color: #819BA1;
+}
+
+.sp-preview:after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 31px;
+  border-top: 4px solid #2F4347;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.sp-dd {
+  display: none;
+}
+
+.sp-container button {
+  background: transparent;
+  font-size: 1em;
+  text-shadow: none;
+  border-radius: 1em;
+  padding-left: .8em;
+  padding-right: .8em;
+  box-shadow: none;
+  outline: none;
+}
+
+/* footer */
+
+.footer {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+}
+
+.footer a, .footer a:visited {
+  color: #64848B;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #fff;
+}
