@@ -1,0 +1,56 @@
+body {
+  padding: 4em;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  background: #F5ACB7;
+  text-align: center;
+}
+
+.select {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+}
+
+.select:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  margin-top: -5px;
+  pointer-events: none;
+  border-top: 10px solid #EB5168;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.select:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  margin-top: -5px;
+  pointer-events: none;
+  border-top: 6px solid #fff;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+
+.select select {
+  outline: none;
+  -webkit-appearance: none;
+  display: block;
+  padding: 1.2em 3em 1.3em 1.5em;
+  margin: 0;
+
+  transition: border-color 0.2s;
+  border: 5px solid #EB5168;
+  border-radius: 5px;
+
+  background: #fff;
+  color: #555;
+  line-height: normal;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
