@@ -11,7 +11,17 @@ body {
   display: inline-block;
 }
 
-.select:before {
+.select .arr {
+  background: #fff;
+  bottom: 5px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 50px;
+  pointer-events: none;
+}
+
+.select .arr:before {
   content: '';
   position: absolute;
   top: 50%;
@@ -23,7 +33,7 @@ body {
   border-right: 10px solid transparent;
 }
 
-.select:after {
+.select .arr:after {
   content: '';
   position: absolute;
   top: 50%;
