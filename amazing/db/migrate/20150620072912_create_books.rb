@@ -5,6 +5,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :author
       t.decimal :price
       t.datetime :published_at
+      t.string :image_url
 
       t.timestamps null: false
     end

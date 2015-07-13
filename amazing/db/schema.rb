@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150620072912) do
     t.string   "author"
     t.decimal  "price"
     t.datetime "published_at"
+    t.string   "image_url"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

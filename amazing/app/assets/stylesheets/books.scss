@@ -1,0 +1,98 @@
+.page-books {
+  &.index {
+    .books-search {
+      text-align: center;
+      max-width: 35em;
+      margin: 2em auto;
+      padding: 2em;
+
+      input {
+        width: 100%;
+        font-size: 1em;
+        padding: .5em 1.3em;
+        background: transparent;
+        border: 1px solid #ddd;
+        border-radius: 2em;
+
+        &:focus {
+          border-color: #A5CEF5;
+        }
+      }
+
+      .results {
+        text-align: left;
+
+        .ui-widget-content {
+          background: #fff;
+          font-size: .9em;
+          padding: .5em 0;
+          border-color: #ddd;
+          box-shadow: 0 .1em .2em rgba(187, 187, 187, 0.64);
+          line-height: 1.2;
+          max-height: 20em;
+          overflow: hidden;
+          overflow-y: auto;
+        }
+
+        .ui-menu-item {
+          font-family: 'Helvetica Neue', Helvetica, sans-serif;
+          padding: .4em .6em .4em 6.2em;
+          position: relative;
+          border: 0;
+          border-left: 5px solid transparent;
+          position: relative;
+          height: 6.5em;
+
+          .img {
+            position: absolute;
+            width: 5em;
+            height: 6em;
+            top: .4em;
+            left: .6em;
+            overflow: hidden;
+
+            img {
+              max-width: 100%;
+            }
+          }
+
+          .title {
+            display: block;
+            color: #555;
+          }
+
+          .author {
+            display: block;
+            font-size: .8em;
+            text-transform: uppercase;
+            color: #aaa;
+            margin-top: .6em;
+            letter-spacing: 1px;
+          }
+
+          .price {
+            display: block;
+            font-size: .8em;
+            color: #aaa;
+            margin-top: .5em;
+          }
+        }
+
+        .ui-state-focus {
+          background: #fff;
+          border-left-color: #08c;
+          font-weight: 300;
+
+          .title {
+            color: #08c;
+          }
+
+          .price,
+          .author {
+            color: #08c;
+          }
+        }
+      }
+    }
+  }
+}

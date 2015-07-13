@@ -1,33 +1,19 @@
-<p id="notice"><%= notice %></p>
+<article class="app-cont">
 
-<h1>Books</h1>
+  <section class="app-title cf">
+    <h1>Books</h1>
+    <%= link_to 'New Book', new_book_path %>
+  </section>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Price</th>
-      <th>Published at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <section class="app-content">
+    <div class="books-search">
+      <input type="text" id="books-search-txt" autofocus>
+      <div class="results" id="books-search-results"></div>
+    </div>
+  </section>
 
-  <tbody>
-    <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= book.price %></td>
-        <td><%= book.published_at %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</article>
 
-<br>
-
-<%= link_to 'New Book', new_book_path %>
+<%= content_for :script do %>
+  new app.Books;
+<% end %>

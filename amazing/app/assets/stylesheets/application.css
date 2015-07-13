@@ -13,4 +13,6 @@
  *= require jquery-ui/datepicker
  *= require reset
  *= require layout
+ *= require header
+ *= require books
  */
