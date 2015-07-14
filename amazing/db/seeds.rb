@@ -12,23 +12,4 @@ Book.create([
   { title: "The Half Has Never Been Told: Slavery and the Making of American Capitalism", author: "Edward E. Baptist", price: 16.0, published_at: DateTime.new(2014, 5, 12), image_url: "http://ecx.images-amazon.com/images/I/51RGjjDctHL._AA160_.jpg" },
   { title: "Deep Down Dark: The Untold Stories of 33 Men Buried in a Chilean Mine, and the Miracle That Set Them Free", author: "Héctor Tobar", price: 36.0, published_at: DateTime.new(2014, 10, 12), image_url: "http://ecx.images-amazon.com/images/I/51u9DXPdbkL._AA160_.jpg" },
   { title: "Undeniable: Evolution and the Science of Creation", author: "Bill Nye and Corey S. Powell", price: 16.0, published_at: DateTime.new(2014, 11, 12), image_url: "http://ecx.images-amazon.com/images/I/51jIthhp2HL._AA160_.jpg" }
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" },
-  # { title: "", author: "", price: 16.0, published_at: DateTime.new(2015, 5, 12), image_url: "" }
 ])
