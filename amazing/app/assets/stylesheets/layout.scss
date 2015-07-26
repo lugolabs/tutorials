@@ -41,3 +41,10 @@ a {
     }
   }
 }
+
+@media (max-width: 60em) {
+  .app-cont {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
