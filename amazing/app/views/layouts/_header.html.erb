@@ -1,7 +1,11 @@
 <header class="app-header">
-  <div class="inner app-cont">
+  <div class="inner app-cont cf">
     <h1 class="logo">
-      <%= link_to 'amazing', root_path %>
+      <%= link_to 'amazing books', root_path %>
     </h1>
+
+    <nav class="nav">
+      <li><%= link_to 'Search', search_books_path %></li>
+    </nav>
   </div>
 </header>

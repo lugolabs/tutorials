@@ -7,7 +7,7 @@ app.Books.prototype = {
   _initAutocomplete: function() {
     this._input
       .autocomplete({
-        source: '/books',
+        source: '/books/search',
         appendTo: '#books-search-results',
         select: $.proxy(this._select, this)
       })

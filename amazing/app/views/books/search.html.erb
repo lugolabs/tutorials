@@ -1,0 +1,19 @@
+<article class="app-cont">
+
+  <section class="app-title cf">
+    <h1>Books</h1>
+    <%= link_to 'New Book', new_book_path %>
+  </section>
+
+  <section class="app-content">
+    <div class="books-search">
+      <input type="text" id="books-search-txt" autofocus>
+      <div class="results" id="books-search-results"></div>
+    </div>
+  </section>
+
+</article>
+
+<%= content_for :script do %>
+  new app.Books;
+<% end %>

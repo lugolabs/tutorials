@@ -1,19 +1,26 @@
-<article class="app-cont">
+<article class="app-cont books-list">
 
   <section class="app-title cf">
     <h1>Books</h1>
     <%= link_to 'New Book', new_book_path %>
+    <%= link_to 'Download (CSV)', books_path(:format => :csv) %>
   </section>
 
   <section class="app-content">
-    <div class="books-search">
-      <input type="text" id="books-search-txt" autofocus>
-      <div class="results" id="books-search-results"></div>
-    </div>
+    <% @books.each do |book| %>
+      <div class="book">
+        <p class="img">
+          <%= image_tag book.image_url %>
+        </p>
+        <h3 class="title"><%= book.title %></h3>
+        <h4 class="author">by <%= book.author %></h4>
+        <p class="details">
+          <span><%= number_to_currency(book.price) %></span>
+          <span>Published on <%= book.published_at.strftime('%B %Y') %></span>
+        </p>
+      </div>
+    <% end %>
   </section>
 
 </article>
 
-<%= content_for :script do %>
-  new app.Books;
-<% end %>

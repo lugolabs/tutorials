@@ -4,6 +4,10 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    @books = Book.order(:title).limit(50)
+  end
+
+  def search
     respond_to do |format|
       format.html
       format.json { @books = Book.search(params[:term]) }

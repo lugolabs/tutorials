@@ -9,5 +9,17 @@
 
   .logo {
     font-size: 1.3em;
+    float: left;
+  }
+
+  .nav {
+    float: right;
+
+    li {
+      display: inline-block;
+      font-size: .7em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
   }
 }

@@ -1,0 +1,11 @@
+csv << ['Title', 'Author', 'Price', 'Publication date', 'Image url']
+
+@books.each do |book|
+  csv << [
+    book.title,
+    book.author,
+    number_to_currency(book.price),
+    book.published_at.strftime('%B %Y'),
+    book.image_url
+  ]
+end
