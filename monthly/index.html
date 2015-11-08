@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Monthly</title>
+  <link rel="stylesheet" type="text/css" href="jquery.monthly.css">
+
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .content {
+      padding: 5em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <a href="#monthly" id="monthly"></a>
+  </div>
+
+
+  <script src="../vendor/jquery-1.11.1.js"></script>
+  <script src="jquery.monthly.js"></script>
+
+  <script>
+    $(function() {
+      $('#monthly').monthly({
+        years: [2015, 2014, 2013, 2012, 2011],
+        topOffset: 6,
+        onMonthSelect: function(m, y) { console.log('Month: ' + m + ', year: ' + y); }
+      });
+    });
+  </script>
+</body>
+</html>
