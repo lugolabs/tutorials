@@ -5,6 +5,7 @@
   z-index: 1000;
   box-shadow: 0 0 5px rgba(153, 153, 153, 0.2);
   border-radius: .2em;
+  background: #fff;
 }
 
 .monthly-wrp:before {

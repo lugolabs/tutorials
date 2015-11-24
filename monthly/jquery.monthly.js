@@ -19,12 +19,12 @@
       },
 
       _render: function() {
-        var linkPosition = this._el.position(),
+        var linkPosition = this._el.offset(),
           cssOptions = {
-            display: 'none',
+            display:  'none',
             position: 'absolute',
-            top: linkPosition.top + this._el.height() + (options.topOffset || 0),
-            left: linkPosition.left
+            top:      linkPosition.top + this._el.height() + (options.topOffset || 0),
+            left:     linkPosition.left
           };
         this._container = $('<div class="monthly-wrp">')
           .css(cssOptions)
@@ -52,7 +52,7 @@
       _selectMonth: function(e) {
         var monthIndex = $(e.target).data('value'),
           month = months[monthIndex],
-          year = this._yearsSelect.val();
+          year  = this._yearsSelect.val();
         this._el.html(month + ' ' + year);
         if (options.onMonthSelect) {
           options.onMonthSelect(monthIndex, year);
