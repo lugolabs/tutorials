@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Week Picker</title>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../vendor/jquery-ui-1.10.4.smoothness.css">
+  <link rel="stylesheet" type="text/css" href="jquery-weekpicker.css">
+
+  <style>
+    body {
+      padding: 2em 4em;
+    }
+  </style>
+</head>
+<body>
+  <h1>jQuery weekpicker</h1>
+
+  <div id="weekpicker"></div>
+  <div class="">Week starting: <b id="week-start"></b>
+
+  <script src="../vendor/jquery-1.11.1.js"></script>
+  <script src="../vendor/jquery-ui-1.10.4.js"></script>
+  <script src="jquery-weekpicker.js"></script>
+  <script>
+    $(function() {
+      var dateText = '12/20/2015',
+        display = $('#week-start');
+      display.text(dateText);
+
+      $('#weekpicker').weekpicker({
+        currentText: dateText,
+        onSuccess: function(dateText, startDateText, startDate, endDate, inst) {
+          display.text(startDateText);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
