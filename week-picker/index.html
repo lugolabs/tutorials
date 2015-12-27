@@ -16,7 +16,7 @@
   <h1>jQuery weekpicker</h1>
 
   <div id="weekpicker"></div>
-  <div class="">Week starting: <b id="week-start"></b>
+  <div class="">Week starting: <b id="week-start"></b></div>
 
   <script src="../vendor/jquery-1.11.1.js"></script>
   <script src="../vendor/jquery-ui-1.10.4.js"></script>
@@ -29,7 +29,7 @@
 
       $('#weekpicker').weekpicker({
         currentText: dateText,
-        onSuccess: function(dateText, startDateText, startDate, endDate, inst) {
+        onSelect: function(dateText, startDateText, startDate, endDate, inst) {
           display.text(startDateText);
         }
       });
