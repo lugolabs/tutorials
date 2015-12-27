@@ -1,6 +1,6 @@
 (function($, undefined) {
 
-  $.widget('ui.weekpicker', {
+  $.widget('lugolabs.weekpicker', {
     _weekOptions: {
       showOtherMonths:   true,
       selectOtherMonths: true
@@ -11,17 +11,13 @@
       this._dateFormat = this.options.dateFormat || $.datepicker._defaults.dateFormat;
       var date = this._initialDate();
       this._setWeek(date);
-      var onSuccess = this.options.onSuccess;
+      var onSelect = this.options.onSelect;
       this._picker = $(this.element).datepicker($.extend(this.options, this._weekOptions, {
         onSelect: function(dateText, inst) {
-          self._setWeek(self._picker.datepicker('getDate'));
-          var startDateText = $.datepicker.formatDate(self._dateFormat, self._startDate, inst.settings);
-          self._picker.val(startDateText);
-          if (onSuccess) onSuccess(dateText, startDateText, self._startDate, self._endDate, inst);
+          self._select(dateText, inst, onSelect);
         },
         beforeShowDay: function(date) {
-          var cssClass = date >= self._startDate && date <= self._endDate ? 'ui-datepicker-current-day' : '';
-          return [true, cssClass];
+          return self._showDay(date);
         },
         onChangeMonthYear: function(year, month, inst) {
           self._selectCurrentWeek();
@@ -41,9 +37,24 @@
       }
     },
 
+    _select: function(dateText, inst, onSelect) {
+      this._setWeek(this._picker.datepicker('getDate'));
+      var startDateText = $.datepicker.formatDate(this._dateFormat, this._startDate, inst.settings);
+      this._picker.val(startDateText);
+      if (onSelect) onSelect(dateText, startDateText, this._startDate, this._endDate, inst);
+    },
+
+    _showDay: function(date) {
+      var cssClass = date >= this._startDate && date <= this._endDate ? 'ui-datepicker-current-day' : '';
+      return [true, cssClass];
+    },
+
     _setWeek: function(date) {
-      this._startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay());
-      this._endDate   = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 6);
+      var year = date.getFullYear(),
+        month = date.getMonth(),
+        day   = date.getDate() - date.getDay();
+      this._startDate = new Date(year, month, day);
+      this._endDate   = new Date(year, month, day + 6);
     },
 
     _selectCurrentWeek: function() {
