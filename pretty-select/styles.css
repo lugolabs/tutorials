@@ -64,3 +64,10 @@ body {
   line-height: inherit;
 }
 
+.select select:focus {
+  border-color:#1A70FF;
+}
+
+.select select:focus + .arr:before {
+  border-top-color:#1A70FF;
+}
