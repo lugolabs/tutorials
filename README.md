@@ -1,7 +1,7 @@
 Tutorials
 =========
 
-Demos for [Lugoland](http://www.lugolabs.com/lugoland).
+Demos for [Lugolabs Blog](http://www.lugolabs.com/blog).
 
 ---------
 
