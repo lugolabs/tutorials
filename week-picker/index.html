@@ -23,15 +23,15 @@
   <script src="jquery-weekpicker.js"></script>
   <script>
     $(function() {
-      var dateText = '12/20/2015',
+      var dateText = '05/26/2018',
         display = $('#week-start');
       display.text(dateText);
-
       $('#weekpicker').weekpicker({
         currentText: dateText,
         onSelect: function(dateText, startDateText, startDate, endDate, inst) {
           display.text(startDateText);
-        }
+        },
+        restrictWeeks: ['06/10/2018', '06/24/2018', '07/15/2018']
       });
     });
   </script>
